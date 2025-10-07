@@ -21,7 +21,7 @@ def decimale(nombre):   #fonction pour les decimales
         etape/=10 # passe au prochain niveau de précision
     return resultat #retourne le résultat
 
-c
+
 
 
 

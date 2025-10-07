@@ -22,7 +22,7 @@ def decimale(nombre):   #fonction pour les decimales
     return resultat #retourne le résultat
 
 
-x
+
 
 
 
