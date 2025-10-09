@@ -1,8 +1,6 @@
 def racine(nombre):
-    resultat = 0.0
     nombre = int(nombre) #transforme "nombre en enier pour pouvoir l'utiliser dans le calcule
-    if nombre < 0:
-        raise ValueError("le nombre doit etre positif")
+    if nombre < 0:raise ValueError("le nombre doit etre positif")
     for i in range(nombre+1):  #donne une valeur de 0 à "nombre" pour i
         if i*i == nombre:   #si i^2 est égale a "nombre alors la fonction retourne i comme reponse
             return i
