@@ -10,9 +10,12 @@ def rond(n,precison):
     valeur_arrondie = round(n,precison)
     return valeur_arrondie
 
-print(rond(3.141516,4))
-
-random.randrange(10,100000,1)
+#print(rond(3.141516,4))
+#clock_gettime()
+#gettimeofday()
+n = (random.uniform(10,10000) for a in range(100000))
+print(n)
+#andom.randrange(10,100000,1)
 #print(random.randrange(10.00,100000.00,1.00))
 random.uniform(10,100000)
 print(random.uniform(10,100000))
