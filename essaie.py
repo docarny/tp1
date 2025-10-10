@@ -5,17 +5,17 @@ def dicothomie(n,precision):
             bas = 0.0
             haut = n
             while (haut - bas) > precision:
-                    milieu = (haut+bas)/2
-                    if milieu*milieu > n:
-                        haut = milieu
-                    elif milieu*milieu < n:
+                milieu = (haut+bas)/2
+                if milieu*milieu > n:
+                     haut = milieu
+                elif milieu*milieu < n:
                         bas = milieu
             return (bas+haut)/2
         return superieur(n,precision)
     elif 0 < n < 1 :
         def inferieur(n,precision):
             bas = n
-            haut = 1
+            haut = 1.0
             while (haut - bas) > precision:
                 milieu = (bas + haut) / 2
                 if milieu*milieu > n:
@@ -34,8 +34,9 @@ def dicothomie(n,precision):
 
 print(dicothomie(0,4))
 print(dicothomie(-1,6))
-print(dicothomie(2,4))
-print(dicothomie(0.1,5))
+print(dicothomie(2,0.001))
+print(dicothomie(0.1,0.00001))
+print(dicothomie(10000,0.00001))
 
 
 
