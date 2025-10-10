@@ -1,10 +1,11 @@
+import math
 def racine(nombre):
     nombre = int(nombre) #transforme "nombre en enier pour pouvoir l'utiliser dans le calcule
     if nombre < 0:raise ValueError("le nombre doit etre positif")
     for i in range(nombre+1):  #donne une valeur de 0 à "nombre" pour i
-        if i*i == nombre:   #si i^2 est égale a "nombre alors la fonction retourne i comme reponse
+        if pow(i,2) == nombre:   #si i^2 est égale a "nombre alors la fonction retourne i comme reponse
             return i
-        elif i*i > nombre : #si i^2 est plus grand alors la fontion adition (i-1) a resultat, ce qui donne lunite de la racine
+        elif pow(i,2) > nombre : #si i^2 est plus grand alors la fontion adition (i-1) a resultat, ce qui donne lunite de la racine
             return i-1 #la fonction retourne le resultat et donc lunite de la racine
 def decimale(nombre):   #fonction pour les decimales
     if nombre < 0: return ValueError("le nombre doit etre positif")
@@ -15,7 +16,7 @@ def decimale(nombre):   #fonction pour les decimales
         for a in range(6): #nombre de décimale
             for d in range(10):  #permet tout les chiffres
                 i = (d * etape) + resultat # donne la valeur du niveau de précision ex: 2.1 et l'assigne a i
-                if i*i > nombre :
+                if pow(i,2) > nombre :
                     resultat += ((d-1) * etape) # si i^2 est superieur a "nombre" alors on prend la valeur de d d'avant puis on le multiplie par le noveau de precision
                     break
             else :

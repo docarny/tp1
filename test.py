@@ -58,11 +58,21 @@ def dicothomie(n,precision):
         return 0
     else:
         return "la racine d'un nombre négatif est impossible"
-
-for n in range(100000):
-    n=random.uniform(10,10000)
-    print(decimale(n))
-
+def calcul_intensif():
+    for n in range(100000):
+        n=random.uniform(10,10000)
+        decimale(n)
+# #for n in range(100000):
+#    # n=random.uniform(10,10000)
+#     print(dicothomie(n,0.00000000001))
+# for n in range(100000):
+#     n=random.uniform(10,10000)
+#     print(math.sqrt(n))
+tempA = time.monotonic_ns()
+calcul_intensif()
+tempB = time.monotonic_ns()
+tempS = tempB - tempA
+print(tempS)
 
 #time.perf_counter()
 #print(time.perf_counter())
