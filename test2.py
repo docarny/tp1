@@ -1,7 +1,3 @@
-import random
-import time
-import math
-
 def racine(nombre):
     nombre = int(nombre) #transforme "nombre en enier pour pouvoir l'utiliser dans le calcule
     if nombre < 0:raise ValueError("le nombre doit etre positif")
@@ -16,7 +12,7 @@ def decimale(nombre):   #fonction pour les decimales
         unite = racine(nombre)  #appelle le resultat de la fonction racinez(nombre)
         resultat = float(unite) #transforme le resultat en unite float
         etape = 0.1  #pour avoir le niveau de précision
-        for a in range(6): #nombre de décimale
+        for a in range(17): #nombre de décimale
             for d in range(10):  #permet tout les chiffres
                 i = (d * etape) + resultat # donne la valeur du niveau de précision ex: 2.1 et l'assigne a i
                 if i*i > nombre :
@@ -27,55 +23,16 @@ def decimale(nombre):   #fonction pour les decimales
             etape/=10 # passe au prochain niveau de précision
         return resultat #retourne le résultat
 
-def dicothomie(n,precision):
-    if n >= 1:
-        def superieur(n,precision):    # intervalle = {0,n}
-            bas = 0.0
-            haut = n
-            while (haut - bas) > precision:
-                milieu = (haut+bas)/2
-                if milieu*milieu > n:
-                     haut = milieu
-                elif milieu*milieu < n:
-                        bas = milieu
-            return (bas+haut)/2
-        return superieur(n,precision)
-    elif 0 < n < 1 :
-        def inferieur(n,precision):
-            bas = n
-            haut = 1.0
-            while (haut - bas) > precision:
-                milieu = (bas + haut) / 2
-                if milieu*milieu > n:
-                    haut = milieu
-                elif milieu*milieu < n:
-                    bas = milieu
-            return (bas+haut)/2
-        return inferieur(n,precision)
 
 
-    elif n==0:
-        return 0
-    else:
-        return "la racine d'un nombre négatif est impossible"
-def time(i):
-    i=1
-    while i < 1000000:
-        for a in range(100000):
-            a = random.uniform(10,10000)
-        i+=1
 
-    return a
-
-print(time(i))
-
-#time.perf_counter()
-#print(time.perf_counter())
-#print(dicothomie(10,0.00001))
-#print(decimale(100002))
-#random.uniform(10,100000)
-#dicothomie(random.uniform(10,100000),0.00001)
-#print(dicothomie(random.uniform(10,100000),0.00001))
-#time.process_time_ns()
-#print(math.sqrt(4))
-#print(time.process_time())
+print(decimale(0))    # 0.0
+print(decimale(0.1))  # 0.31622776601683794
+print(decimale(0.2))  # 0.4472135954999579
+print(decimale(0.9))  # 0.9486832980505138
+print(decimale(8))    # 2.8284271247461903
+print(decimale(9))    # 3.0
+print(decimale(81))   # 9.0
+print(decimale(123))  # 11.090536506409418
+print(decimale(999))  # 31.606961258558215
+print(decimale(-3))   # Doit lever une exception

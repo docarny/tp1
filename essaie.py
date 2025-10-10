@@ -27,16 +27,21 @@ def dicothomie(n,precision):
 
 
     elif n==0:
-        return 0
+        return 0.0
     else:
         return "la racine d'un nombre négatif est impossible"
 
 
-print(dicothomie(0,4))
-print(dicothomie(-1,6))
-print(dicothomie(2,0.001))
-print(dicothomie(0.1,0.00001))
-print(dicothomie(10000,0.00001))
+print(dicothomie(0,0.0000001))    # 0.0
+print(dicothomie(0.1,0.0000001))  # 0.31622776601683794
+print(dicothomie(0.2,0.0000001))  # 0.4472135954999579
+print(dicothomie(0.9,0.0000001))  # 0.9486832980505138
+print(dicothomie(8,0.0000001))    # 2.8284271247461903
+print(dicothomie(9,0.0000001))    # 3.0
+print(dicothomie(81,0.0000001))   # 9.0
+print(dicothomie(123,0.0000001))  # 11.090536506409418
+print(dicothomie(999,0.0000001))  # 31.606961258558215
+print(dicothomie(-3,0.0000001))   # Doit lever une exception
 
 
 
