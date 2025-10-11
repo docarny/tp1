@@ -1,4 +1,15 @@
 def dicothomie(n,precision):
+    """
+   La fonction dicothomie prend une valeur de precision en plus du nombre don l'ont cherche la racine.
+   Elle commence par trié n en fonction de son intervale [0,n],[0<n<1] et de si n est égale a 0 ou négatifs.
+   Ensuite dans les deux cas le calcule est le même. on donne la valeur approprié de bas et haut en fonction
+   l'intervalle puis on effectue une boucle while jusqua ce que la différence des bornes soit inférieurs à
+   la précision. le calcul en lui même est très similaire a la première méthode. elle vérifie si milieu^2
+   est inférieur ou supérieur a n puis admet ,le haut ou le bas, égale à milieu en focntion du résultat.
+   enfin la fonction renvoi bas+haut / 2 avec la nouvelle valeur affecté. lorsque le but est atteint, la
+   fonction retourne la valeur de la sous fonction pour pouvoir etre éventuellement utiliser.
+
+    """
     if n >= 1:
         def superieur(n,precision):    # intervalle = {0,n}
             bas = 0.0

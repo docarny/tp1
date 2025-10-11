@@ -1,5 +1,10 @@
 import math
 def racine(base,nombre):
+    """
+    Pareille que la fonction racine de base mais on rajoute une variable base affin de pouvoir généraliser
+    à n'importe quelle racine désirer. ex: la racine cubique de 8 = 2
+
+    """
     nombre = int(nombre)
     base = int(base)
     if nombre < 0:raise ValueError("le nombre doit etre positif")
@@ -8,6 +13,11 @@ def racine(base,nombre):
             if pow(i,base) == nombre: return i
             elif pow(i,base) > nombre : return i-1
 def nieme(nombre,base):
+    """
+    Idem pour cette fonction qui est une simple variation de decimale utilisant l'exact même principe que la
+    "nouvelle" fonction racine.
+
+    """
     if nombre < 0: return ValueError("le nombre doit etre positif")
     else:
         unite = racine(base,nombre)
@@ -25,6 +35,11 @@ def nieme(nombre,base):
 
 
 def ndicothomie(n,precision,base):
+    """
+    pareille que la fonction dicothomie de base mais en ajoutant une variable de base pour obtenir le même
+    effet désirer que dans les deux premières fonction du fichier.
+
+    """
     if n >= 1:
         def superieur(n,precision,base):    # intervalle = {0,n}
             bas = 0.0
