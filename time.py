@@ -62,25 +62,27 @@ def calcul_intensif():
     for n in range(100000):
         n=random.uniform(10,10000)
         decimale(n)
-# #for n in range(100000):
-#    # n=random.uniform(10,10000)
-#     print(dicothomie(n,0.00000000001))
-# for n in range(100000):
-#     n=random.uniform(10,10000)
-#     print(math.sqrt(n))
 tempA = time.monotonic_ns()
 calcul_intensif()
 tempB = time.monotonic_ns()
 tempS = tempB - tempA
-print(tempS)
-
-#time.perf_counter()
-#print(time.perf_counter())
-#print(dicothomie(10,0.00001))
-#print(decimale(100002))
-#random.uniform(10,100000)
-#dicothomie(random.uniform(10,100000),0.00001)
-#print(dicothomie(random.uniform(10,100000),0.00001))
-#time.process_time_ns()
-#print(math.sqrt(4))
-#print(time.process_time())
+def calcul_intensif2():
+    for n in range(100000):
+        n=random.uniform(10,10000)
+        dicothomie(n,0.0000001)
+tempA = time.monotonic_ns()
+calcul_intensif2()
+tempB = time.monotonic_ns()
+tempS1 = tempB - tempA
+def calcul_intensif3():
+    for n in range(100000):
+        n=random.uniform(10,10000)
+        math.sqrt(n)
+tempA = time.monotonic_ns()
+calcul_intensif3()
+tempB = time.monotonic_ns()
+tempS2 = tempB - tempA
+print("Résultats des performances :")
+print(f"Méthode 1 (chiffre par chiffre) : Temps total ={tempS*0.000001:.0f} ms, temps moyen = {(tempS/100000)*0.000001:.4f} ms ")
+print(f"Méthode 2 (dichotomie)          : Temps total ={tempS1*0.000001:.0f} ms, temps moyen = {(tempS1/100000)*0.000001:.4f} ms ")
+print(f"Méthode 3 (math.sqrt)           : Temps total ={tempS2*0.000001:.0f} ms, temps moyen = {(tempS2/100000)*0.000001:.4f} ms ")
